@@ -138,8 +138,8 @@ const storePeople = [...people].sort((firstPerson, secondPerson) => {
         return firstSection - secondSection;
     }
 
-    if (firstPriority !== undefined || secondPriority !== undefined) {
-        return (firstPriority ?? Number.MAX_SAFE_INTEGER) - (secondPriority ?? Number.MAX_SAFE_INTEGER);
+    if (firstPriority !== undefined && secondPriority !== undefined) {
+        return firstPriority - secondPriority;
     }
 
     return firstPerson.name.localeCompare(secondPerson.name, "fr-CA");
