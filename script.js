@@ -123,25 +123,23 @@ function getSectionNumber(role) {
     return sectionMatch ? Number(sectionMatch[1]) : 0;
 }
 
+const STORE_PRIORITY_ORDER = new Map([
+    ["Jérôme Collin", 0],
+    ["Geneviève Cyr", 1]
+]);
+
 const storePeople = [...people].sort((firstPerson, secondPerson) => {
     const firstSection = getSectionNumber(firstPerson.role);
     const secondSection = getSectionNumber(secondPerson.role);
-    const priorityNames = ["Jérôme Collin", "Geneviève Cyr"];
-    const firstPriority = priorityNames.indexOf(firstPerson.name);
-    const secondPriority = priorityNames.indexOf(secondPerson.name);
+    const firstPriority = STORE_PRIORITY_ORDER.get(firstPerson.name);
+    const secondPriority = STORE_PRIORITY_ORDER.get(secondPerson.name);
 
     if (firstSection !== secondSection) {
         return firstSection - secondSection;
     }
 
-    if (firstPriority !== -1 || secondPriority !== -1) {
-        if (firstPriority === -1) {
-            return 1;
-        }
-        if (secondPriority === -1) {
-            return -1;
-        }
-        return firstPriority - secondPriority;
+    if (firstPriority !== undefined || secondPriority !== undefined) {
+        return (firstPriority ?? Number.MAX_SAFE_INTEGER) - (secondPriority ?? Number.MAX_SAFE_INTEGER);
     }
 
     return firstPerson.name.localeCompare(secondPerson.name, "fr-CA");
