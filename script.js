@@ -123,12 +123,23 @@ function getSectionNumber(role) {
     return sectionMatch ? Number(sectionMatch[1]) : 0;
 }
 
+const STORE_PRIORITY_ORDER = new Map([
+    ["Jérôme Collin", 0],
+    ["Geneviève Cyr", 1]
+]);
+
 const storePeople = [...people].sort((firstPerson, secondPerson) => {
     const firstSection = getSectionNumber(firstPerson.role);
     const secondSection = getSectionNumber(secondPerson.role);
+    const firstPriority = STORE_PRIORITY_ORDER.get(firstPerson.name);
+    const secondPriority = STORE_PRIORITY_ORDER.get(secondPerson.name);
 
     if (firstSection !== secondSection) {
         return firstSection - secondSection;
+    }
+
+    if (firstPriority !== undefined && secondPriority !== undefined) {
+        return firstPriority - secondPriority;
     }
 
     return firstPerson.name.localeCompare(secondPerson.name, "fr-CA");
