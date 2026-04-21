@@ -126,9 +126,22 @@ function getSectionNumber(role) {
 const storePeople = [...people].sort((firstPerson, secondPerson) => {
     const firstSection = getSectionNumber(firstPerson.role);
     const secondSection = getSectionNumber(secondPerson.role);
+    const priorityNames = ["Jérôme Collin", "Geneviève Cyr"];
+    const firstPriority = priorityNames.indexOf(firstPerson.name);
+    const secondPriority = priorityNames.indexOf(secondPerson.name);
 
     if (firstSection !== secondSection) {
         return firstSection - secondSection;
+    }
+
+    if (firstPriority !== -1 || secondPriority !== -1) {
+        if (firstPriority === -1) {
+            return 1;
+        }
+        if (secondPriority === -1) {
+            return -1;
+        }
+        return firstPriority - secondPriority;
     }
 
     return firstPerson.name.localeCompare(secondPerson.name, "fr-CA");
