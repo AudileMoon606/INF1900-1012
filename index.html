@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INF1900-1012 — Accueil</title>
+    <link rel="icon" type="image/png" href="https://cours.polymtl.ca/inf1900/images/favicon-144x144.png">
+    <meta name="description" content="Site vitrine de l'équipe INF1900-1012: suivi Scrum, affiche du projet, remerciements et boutique fictive.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:title" content="INF1900-1012 — Accueil">
+    <meta property="og:description" content="Découvrez le projet INF1900-1012, son suivi Scrum, son affiche finale et une boutique hommage.">
+    <meta property="og:image" content="https://cours.polymtl.ca/inf1900/images/logo_poly.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="index">
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="https://cours.polymtl.ca/inf1900/images/logo_poly.png" alt="Logo Polytechnique Montréal">
+                <span>INF1900-1012</span>
+            </a>
+            <nav>
+                <a href="index.html" data-nav="index">Accueil</a>
+                <a href="poster.html" data-nav="poster">Affiche</a>
+                <a href="scrum.html" data-nav="scrum">Scrum</a>
+                <a href="acknowledgements.html" data-nav="acknowledgements">Remerciements</a>
+                <a href="store.html" data-nav="store">Boutique</a>
+            </nav>
+            <button id="themeToggle" class="btn-icon" aria-label="Basculer le thème">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container intro-main">
+        <section class="hero card">
+            <p class="eyebrow">Projet intégrateur</p>
+            <h1>Bienvenue sur notre vitrine INF1900-1012</h1>
+            <p>
+                Ce site résume le travail réalisé pendant la session, met en lumière notre suivi Scrum
+                et remercie les personnes qui ont rendu ce parcours possible.
+            </p>
+            <div class="hero-actions">
+                <a class="btn" href="scrum.html">Voir le suivi Scrum</a>
+                <a class="btn btn-secondary" href="acknowledgements.html">Découvrir les personnes clés</a>
+            </div>
+        </section>
+
+        <section class="grid-3">
+            <article class="card stat-card">
+                <h2>Transparence</h2>
+                <p>Un accès direct à notre progression de tâches et à l'organisation de l'équipe.</p>
+            </article>
+            <article class="card stat-card">
+                <h2>Reconnaissance</h2>
+                <p>Un espace de remerciement pour les enseignants, chargés et répétiteurs du cours.</p>
+            </article>
+            <article class="card stat-card">
+                <h2>Fun</h2>
+                <p>Une boutique fictive pour célébrer l'équipe avec des chandails à prix inestimable.</p>
+            </article>
+        </section>
+
+        <section class="card poster-overview">
+            <p class="eyebrow">Équipe 1012</p>
+            <h2>Notre affiche finale</h2>
+            <p class="team-line">Diego Cabrera, Gabriel Fortes-Beyh, Mohamed Elbahrawy et Tommy Tremblay</p>
+            <div class="iframe-card poster-frame">
+                <iframe
+                    loading="lazy"
+                    title="Affiche Canva — COMPILE PAS - robot"
+                    src="https://www.canva.com/design/DAHHPkTxNPs/w5Qn1tzGVIpi8NaeCF1Rtg/view?embed"
+                    allowfullscreen
+                    allow="fullscreen">
+                </iframe>
+            </div>
+            <div class="hero-actions">
+                <a class="btn btn-secondary" href="poster.html">Ouvrir la page affiche</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

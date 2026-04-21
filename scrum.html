@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INF1900-1012 — Scrum</title>
+    <link rel="icon" type="image/png" href="https://cours.polymtl.ca/inf1900/images/favicon-144x144.png">
+    <meta name="description" content="Suivi Scrum du projet INF1900-1012 avec le tableau de tâches de l'équipe.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:title" content="INF1900-1012 — Scrum">
+    <meta property="og:description" content="Consultez le suivi Scrum de l'équipe INF1900-1012.">
+    <meta property="og:image" content="https://cours.polymtl.ca/inf1900/images/logo_poly.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="scrum">
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="https://cours.polymtl.ca/inf1900/images/logo_poly.png" alt="Logo Polytechnique Montréal">
+                <span>INF1900-1012</span>
+            </a>
+            <nav>
+                <a href="index.html" data-nav="index">Accueil</a>
+                <a href="poster.html" data-nav="poster">Affiche</a>
+                <a href="scrum.html" data-nav="scrum">Scrum</a>
+                <a href="acknowledgements.html" data-nav="acknowledgements">Remerciements</a>
+                <a href="store.html" data-nav="store">Boutique</a>
+            </nav>
+            <button id="themeToggle" class="btn-icon" aria-label="Basculer le thème">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card section-head">
+            <p class="eyebrow">Progression de l'équipe</p>
+            <h1>Suivi Scrum en direct</h1>
+            <p>Cette fenêtre affiche notre tableau de tâches directement depuis notre application Scrum.</p>
+        </section>
+
+        <section class="card iframe-card">
+            <iframe
+                title="Tableau Scrum"
+                src="https://scrum-sync--melbahrawy4.replit.app/tasks"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                allowfullscreen>
+            </iframe>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
